@@ -5,7 +5,7 @@ import java.util.Random;
 public class PioGame {
     public static void main(String[] args) {
         Player player = new Player();
-        player.setName("Ziutek");
+        player.setName("Nazwa gracza");
         Random r = new Random();
         int rValue;
         int nValue;
