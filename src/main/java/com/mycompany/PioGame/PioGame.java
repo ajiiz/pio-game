@@ -4,8 +4,7 @@ import java.util.Random;
 
 public class PioGame {
     public static void main(String[] args) {
-        Player player = new Player();
-        player.setName("Nazwa gracza");
+        Player player = new Player("");
         Random r = new Random();
         int rValue;
         int nValue;
