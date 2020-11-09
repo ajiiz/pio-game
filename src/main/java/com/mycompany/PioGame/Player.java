@@ -19,10 +19,10 @@ public abstract class Player {
     }
 
     public final void setName(String name) {
-        if(name != null && !name.isEmpty()) {
+        if(name != null && name.matches("^[A-Za-z0-9-$_]{5,}$")) {
             this.name = name;
         } else {
-            System.err.println("Nieprawidlowe imie");
+            throw new IllegalArgumentException("Nieprawidlowe imie.");
         }
     }
 }

@@ -4,8 +4,14 @@ import java.util.Random;
 
 public class PioGame {
     public static void main(String[] args) {
-        Player player = new PlayerHuman("Piotrek");
-        Player playerComp = new PlayerComp("Komputer");
+        Player player = new PlayerComp("Pio$_-");
+        
+        try {
+            player.setName("");
+        } catch (IllegalArgumentException e) {
+            System.err.println("Blad! " + e);
+        }
+        
         Random r = new Random();
         int rValue;
         int nValue;
