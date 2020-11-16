@@ -1,31 +1,33 @@
 package com.mycompany.PioGame;
 
-import java.util.Random;
+import java.util.*;
 
 public class PioGame {
     public static void main(String[] args) {
-        Player player = new PlayerComp("Pio$_-");
+        /*
+        List<String> list = new ArrayList();
         
-        try {
-            player.setName("");
-        } catch (IllegalArgumentException e) {
-            System.err.println("Blad! " + e);
+        list.add("raz");
+        list.add("dwa");
+        list.add("trzy");
+        
+        for (int i = 0; i < list.size(); ++i) {
+            System.out.print(list.get(i)+" ");
+        }
+        System.out.println("\n---");
+        for (String item : list) {
+            System.out.print(item+" ");
         }
         
-        Random r = new Random();
-        int rValue;
-        int nValue;
-        do {
-            rValue = r.nextInt(6)+1;
-            nValue = player.guess();
-            
-            if(rValue != nValue) {
-                System.out.println("Pudlo :(");
-            }
-            
-            System.out.println("Kostka: "+ rValue);
-            System.out.println(player.getName() + ": " + nValue);
-        } while(rValue != nValue);
-        System.out.println("Wylosowana: " + rValue + ". Wytypowana: " + nValue + ". Brawo!");
+        System.out.println("\n---");
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next()+" ");
+        }*/
+        
+        
+        Player player = new PlayerComp("Pio$_-");
+        Game game = new Game();
+        game.play(player);
     }
 }
