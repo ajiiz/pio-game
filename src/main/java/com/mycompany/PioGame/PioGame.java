@@ -1,10 +1,20 @@
 package com.mycompany.PioGame;
 
-import java.util.*;
-
 public class PioGame {
-    public static void main(String[] args) {
-        /*
+    public static void main(String[] args) {        
+        Player player = new PlayerHuman("player1");
+        Player player2 = new PlayerHuman("player2");
+        Game game = new Game();
+        game.addPlayer(player);
+        game.addPlayer(player2);
+        game.play();
+    }
+}
+
+
+/*
+        Listy
+        
         List<String> list = new ArrayList();
         
         list.add("raz");
@@ -24,10 +34,3 @@ public class PioGame {
         while (it.hasNext()) {
             System.out.print(it.next()+" ");
         }*/
-        
-        
-        Player player = new PlayerComp("Pio$_-");
-        Game game = new Game();
-        game.play(player);
-    }
-}
