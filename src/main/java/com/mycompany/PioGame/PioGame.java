@@ -3,10 +3,13 @@ package com.mycompany.PioGame;
 public class PioGame {
     public static void main(String[] args) {        
         Player player = new PlayerHuman("player1");
-        Player player2 = new PlayerHuman("player2");
+        Player player2 = new PlayerHuman("player1");
         Game game = new Game();
         game.addPlayer(player);
         game.addPlayer(player2);
+        game.printPlayers();
+        
+        game.printPlayers();
         game.play();
     }
 }

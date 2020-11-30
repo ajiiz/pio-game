@@ -4,9 +4,50 @@ import java.util.*;
 
 public class Game {
     private List<Player> players = new ArrayList<>();
+    private Random r = new Random();
     
     public void addPlayer(Player player) {
-        players.add(player);
+        if (nameExists(player.getName())) {
+            String newName = findUniqueName(player.getName());
+            player.setName(newName);
+            players.add(player);
+        } else {
+            players.add(player);
+        }
+        
+    }
+    
+    private boolean nameExists(String name) {
+        for (Player player : players) {
+            if (player.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void removePlayer(String name) {
+        Iterator<Player> it = players.iterator();
+        while(it.hasNext()) {
+            if (it.next().getName().equals(name)) {
+                it.remove();
+            }
+        }
+    }
+    
+    public String findUniqueName(String name) {
+        String uniqueName = name;
+        do {
+            uniqueName += r.nextInt(10);
+        } while(nameExists(uniqueName));
+        return uniqueName;
+    }
+    
+    public void printPlayers() {
+        players.forEach((player) -> {
+            System.out.println(player.getName() + " ");
+        });
+        System.out.println("");
     }
     
     public void play() {
@@ -16,7 +57,6 @@ public class Game {
             System.err.println("Blad! " + e);
         }*/
         
-        Random r = new Random();
         int rValue;
         int nValue;
         boolean again;
@@ -44,3 +84,16 @@ public class Game {
         } while(again);
     }
 }
+
+/*
+Wersja druga removePlayer
+
+public void removePlayer(String name) {
+        for (Player player : players) {
+            if (player.getName().equals(name)) {
+                players.remove(player);
+                break;
+            }
+        }
+    }
+*/
