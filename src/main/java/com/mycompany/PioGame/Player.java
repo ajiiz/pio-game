@@ -14,7 +14,7 @@ public abstract class Player {
     
     public abstract int guess();
 
-    public final String getName() {
+    public String getName() {
         return name;
     }
 

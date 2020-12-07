@@ -5,6 +5,11 @@ import java.util.*;
 public class Game {
     private List<Player> players = new ArrayList<>();
     private Random r = new Random();
+    private Statistics stats;
+    
+    public Game(Statistics stats) {
+        this.stats = stats;
+    }
     
     public void addPlayer(Player player) {
         if (nameExists(player.getName())) {
@@ -15,6 +20,11 @@ public class Game {
             players.add(player);
         }
         
+    }
+    
+    public void printStats() {
+        System.out.println("##########");
+        stats.print();
     }
     
     private boolean nameExists(String name) {
@@ -78,6 +88,7 @@ public class Game {
                 } else {
                     System.out.println("Gratulacje :)");
                     System.out.println("Wygral " + player.getName());
+                    stats.addStats(player.getName());
                     again = false;
                 }
             }

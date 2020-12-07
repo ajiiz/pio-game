@@ -1,16 +1,21 @@
 package com.mycompany.PioGame;
 
 public class PioGame {
-    public static void main(String[] args) {        
-        Player player = new PlayerHuman("player1");
-        Player player2 = new PlayerHuman("player1");
-        Game game = new Game();
+    public static void main(String[] args) {  
+        Player player = new PlayerComp("Piotrek");
+        Player player2 = new PlayerComp("Magda");
+        Player player3 = new PlayerComp("Janusz");
+        Game game = new Game(new Statistics());
         game.addPlayer(player);
         game.addPlayer(player2);
-        game.printPlayers();
+        game.addPlayer(player3);
         
+        for (int i = 0; i < 100; ++i) {
+            game.play();
+        }
+
         game.printPlayers();
-        game.play();
+        game.printStats();
     }
 }
 
