@@ -1,4 +1,4 @@
-package com.mycompany.PioGame;
+package com.mycompany.PioGame.players;
 
 public abstract class Player {
     

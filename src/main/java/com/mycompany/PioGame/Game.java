@@ -1,14 +1,28 @@
 package com.mycompany.PioGame;
 
+import com.mycompany.PioGame.statistics.Statistics;
+import com.mycompany.PioGame.statistics.WinStatistics;
+import com.mycompany.PioGame.statistics.NullStatistics;
+import com.mycompany.PioGame.players.Player;
 import java.util.*;
 
 public class Game {
     private List<Player> players = new ArrayList<>();
     private Random r = new Random();
-    private Statistics stats;
+    private final Statistics stats;
     
-    public Game(Statistics stats) {
-        this.stats = stats;
+    public Game() {
+        this(null);
+        // czyli przejdzie to nastepnego konstruktora z parametrem null
+        // wykona sie - this.stats = new NullStatistics();
+    }
+    
+    public Game(WinStatistics stats) {
+        if (stats != null) {
+            this.stats = stats;
+        } else {
+            this.stats = new NullStatistics();
+        }
     }
     
     public void addPlayer(Player player) {
