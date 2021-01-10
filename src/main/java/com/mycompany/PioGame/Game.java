@@ -33,7 +33,6 @@ public class Game {
         } else {
             players.add(player);
         }
-        
     }
     
     public void printStats() {
